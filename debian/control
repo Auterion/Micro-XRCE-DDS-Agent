@@ -1,0 +1,12 @@
+Source: micro-xrce-dds-agent
+Section: unknown
+Priority: optional
+Maintainer: Daniele Pettenuzzo <daniele@auterion.com>
+Build-Depends: debhelper (>= 11), libspdlog-dev
+Standards-Version: 4.1.3
+Homepage: https://github.com/Auterion/Micro-XRCE-DDS-Agent.git
+
+Package: micro-xrce-dds-agent
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: micro-xrce-dds-agent
