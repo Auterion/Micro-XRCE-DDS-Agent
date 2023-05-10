@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         arch: [arm64, amd64]
-    uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@add-args-remove-cloudsmith-sources
+    uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@add-prepare-step
     with:
       project-name: "micro-xrce-dds-agent"
       architecture: ${{ matrix.arch }}
