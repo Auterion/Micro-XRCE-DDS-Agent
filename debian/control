@@ -2,7 +2,16 @@ Source: micro-xrce-dds-agent
 Section: unknown
 Priority: optional
 Maintainer: Daniele Pettenuzzo <daniele@auterion.com>
-Build-Depends: debhelper (>= 11), libspdlog-dev
+Build-Depends-Indep:
+ debhelper (>= 11),
+ g++-aarch64-linux-gnu [arm64],
+ gcc-aarch64-linux-gnu [arm64],
+Build-Depends:
+ libspdlog-dev,
+ libasio-dev,
+ libtinyxml2-6a,
+ libtinyxml2-dev,
+ dds-dependencies,
 Standards-Version: 4.1.3
 Homepage: https://github.com/Auterion/Micro-XRCE-DDS-Agent.git
 
