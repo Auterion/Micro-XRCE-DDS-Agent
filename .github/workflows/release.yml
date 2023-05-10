@@ -1,0 +1,20 @@
+#
+# Copyright (C) 2022 Auterion AG
+#
+
+name: Release .debs
+on: 
+  release:
+    types: [published]
+
+jobs:
+  build-deb:
+    strategy:
+      matrix:
+        arch: [arm64, amd64]
+    uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@add-args-remove-cloudsmith-sources
+    with:
+      project-name: "micro-xrce-dds-agent"
+      architecture: ${{ matrix.arch }}
+      versioned-release: false  
+    secrets: inherit
