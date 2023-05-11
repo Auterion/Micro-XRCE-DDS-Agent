@@ -8,14 +8,14 @@ on: push
 jobs:
   basic-validation-call:
     uses: actions/reusable-workflows/.github/workflows/basic-validation.yml@main
-  build-deb:
-    strategy:
-      matrix:
-        arch: [arm64, amd64]
-    uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@main
-    with:
-      project-name: "micro-xrce-dds-agent"
-      architecture: ${{ matrix.arch }}
-      versioned-release: false
-      include-release-body: false
-    secrets: inherit
+  # build-deb:
+  #   strategy:
+  #     matrix:
+  #       arch: [arm64, amd64]
+  #   uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@main
+  #   with:
+  #     project-name: "micro-xrce-dds-agent"
+  #     architecture: ${{ matrix.arch }}
+  #     versioned-release: false
+  #     include-release-body: false
+  #   secrets: inherit
