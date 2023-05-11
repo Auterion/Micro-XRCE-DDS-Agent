@@ -1,20 +1,21 @@
 #
-# Copyright (C) 2022 Auterion AG
+# Copyright (C) 2023 Auterion AG
 #
 
 name: Release .debs
-on: 
+on:
   release:
     types: [published]
 
 jobs:
-  build-deb:
+  release:
     strategy:
       matrix:
         arch: [arm64, amd64]
-    uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@add-prepare-step
+    uses: Auterion/common-workflows/.github/workflows/deb-workflow.yml@main
     with:
       project-name: "micro-xrce-dds-agent"
       architecture: ${{ matrix.arch }}
-      versioned-release: false  
+      versioned-release: true
+      include-release-body: false
     secrets: inherit

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 Auterion AG
+# Copyright (C) 2023 Auterion AG
 #
 
 name: Build .debs
@@ -14,6 +14,6 @@ jobs:
     with:
       project-name: "micro-xrce-dds-agent"
       architecture: ${{ matrix.arch }}
-      versioned-release: true
+      versioned-release: false
       include-release-body: false
     secrets: inherit
